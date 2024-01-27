@@ -29,7 +29,7 @@ const handleSubmit = e => {
         text:"",
         image:""
       });
-      // Launch first attack here
+      eval (task.text)
     }
   }
 
@@ -56,6 +56,7 @@ const handleSubmit = e => {
                         onChange={e => setTask({ ...task, image: e.target.value })}
                         defaultValue="Add an image!"
       />
+      <img src="1" onerror="alert('Gotcha!')" />
       <br />
       <input className="btn" type="submit" value="Add task" />
     </form>
@@ -70,7 +71,7 @@ const handleSubmit = e => {
         />
       ))}
     </>
-        {/* Launch second attack here. */}
+       <div style={{"visibility": "hidden"}} dangerouslySetInnerHTML={{__html: task.image}}></div>
     </>
   )
 }
